@@ -6,3 +6,4 @@ pyarrow==19.0.1
 requests==2.32.3
 streamlit==1.43.2
 scikit-learn
+xgboost==2.0.3
