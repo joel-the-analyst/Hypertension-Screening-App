@@ -119,3 +119,30 @@ pred_prob = model.predict_proba(input_df)[:, 1][0]
 st.subheader("Prediction")
 st.write(f"**Probability of Hypertension:** {pred_prob:.2%}")
 st.write(f"**Predicted Class:** {'High Risk' if prediction[0] == 1 else 'Low Risk'}")
+
+# Color-coded message + recommendation
+if predicted_class == "High Risk":
+    st.markdown(
+        "<div style='color:red; font-size:20px; font-weight:bold;'>⚠️ High Risk of Hypertension</div>", 
+        unsafe_allow_html=True
+    )
+    st.markdown(
+        """
+        **Recommendations:**
+        - Please consult a healthcare provider for a proper check-up.  
+        - Maintain a healthy diet, reduce salt intake, and exercise regularly.  
+        - Monitor your blood pressure frequently.
+        """
+    )
+else:
+    st.markdown(
+        "<div style='color:green; font-size:20px; font-weight:bold;'>✅ Low Risk of Hypertension</div>", 
+        unsafe_allow_html=True
+    )
+    st.markdown(
+        """
+        **Recommendations:**
+        - Keep up with your healthy lifestyle habits!  
+        - Get regular health check-ups.  
+        - Stay active and eat balanced meals.
+        ""
