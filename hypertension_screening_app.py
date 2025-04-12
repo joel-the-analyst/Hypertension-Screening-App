@@ -121,7 +121,7 @@ st.write(f"**Probability of Hypertension:** {pred_prob:.2%}")
 st.write(f"**Predicted Class:** {'High Risk' if prediction[0] == 1 else 'Low Risk'}")
 
 # Color-coded message + recommendation
-if predicted_class == "High Risk":
+if prediction == "High Risk":
     st.markdown(
         "<div style='color:red; font-size:20px; font-weight:bold;'>⚠️ High Risk of Hypertension</div>", 
         unsafe_allow_html=True
